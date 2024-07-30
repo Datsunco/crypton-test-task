@@ -1,7 +1,23 @@
 
 .headerBlock{
-    max-width: 1200px;
-    
+    width: 1200px;
+}
+
+.iconBlock{
+    padding: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.profileBlock{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
 }
 
 .searchField{
