@@ -76,10 +76,28 @@ const AuthPopover: React.FC = () => {
   return (
     <Popover>
       <PopoverTrigger>
-        <Avatar className="flex h-12 w-12 items-center justify-center text-muted-foreground bg-muted border-2">
-          <AvatarImage src="/placeholder-user.jpg" />
-          <AvatarFallback>U</AvatarFallback>
-        </Avatar>
+        {isFetching ? (
+          <Avatar className="flex h-12 w-12 items-center justify-center text-muted-foreground bg-muted border-2">
+            <AvatarImage
+              alt="Loading"
+              width="64"
+              height="64"
+              src={"/loader.svg"}
+              className="animate-spin"
+            />
+            <AvatarFallback>U</AvatarFallback>
+          </Avatar>
+        ) : profileData ? (
+          <Avatar className="flex h-12 w-12 items-center justify-center text-muted-foreground bg-muted border-2">
+            <AvatarImage src="/placeholder-user.jpg" />
+            <AvatarFallback>U</AvatarFallback>
+          </Avatar>
+        ) : (
+          <Avatar className="flex h-12 w-12 items-center justify-center text-muted-foreground bg-muted border-2">
+            <AvatarImage src="/placeholder-user.jpg" />
+            <AvatarFallback>?</AvatarFallback>
+          </Avatar>
+        )}
       </PopoverTrigger>
       <PopoverContent
         sideOffset={20}
