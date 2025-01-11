@@ -164,6 +164,7 @@ export function NavigationMenuDemo() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
+  // eslint-disable-next-line react/prop-types
 >(({ className, title, children, ...props }, ref) => {
   return (
     <li>

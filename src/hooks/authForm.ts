@@ -55,7 +55,7 @@ export const useRegisterFormik = (
         .required("Email обязателен"),
       password: Yup.string().required("Пароль обязателен"),
       confirmPassword: Yup.string()
-        .oneOf([Yup.ref("password"), null], "Пароли должны совпадать")
+        .oneOf([Yup.ref("password"), undefined], "Пароли должны совпадать")
         .required("Подтверждение пароля обязательно"),
     }),
     onSubmit: async (values, { setErrors }) => {

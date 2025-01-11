@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { LogoIcon } from "@/icons/Logoicon";
 import { SmalLogoIcon } from "@/icons/SmalLogoIcon";
 
 export default function Footer() {
@@ -11,6 +10,7 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             {/* <MountainIcon className="w-6 h-6" />
             <span className="font-medium">Envelope</span> */}
+
             <SmalLogoIcon />
           </div>
           {/* <p className="text-muted-foreground">
