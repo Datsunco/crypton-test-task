@@ -1,18 +1,17 @@
 //react, next
 
-import { Provider } from "react-redux";
 import React from "react";
-import Head from "next/head";
 import { Metadata } from "next";
-
 import { Jost } from "next/font/google";
 import "./globals.css";
 
-import { cn } from "@/lib/utils";
-import Header from "@/components/common/Header/Header";
-import Footer from "@/components/Footer/Footer";
-import store from "@/store/store";
+// components
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer/Footer";
 import ClientProvider from "./ClientProvider";
+
+// utils
+import { cn } from "@/lib/utils";
 
 const fontSans = Jost({
   subsets: ["latin"],
