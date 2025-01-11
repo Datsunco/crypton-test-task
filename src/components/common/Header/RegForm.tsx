@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
@@ -17,7 +17,7 @@ const RegForm: React.FC<AuthFormProps> = ({
 }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [isRegistering, setIsRegistering] = useState(false); // Состояние для управления регистрацией
+  const [isRegistering, setIsRegistering] = useState(false);
 
   const handleLoginClick = () => {
     formik.setFieldValue("password", "");
@@ -29,6 +29,14 @@ const RegForm: React.FC<AuthFormProps> = ({
   const handleRegisterClick = () => {
     setIsRegistering(true);
   };
+
+  useEffect(() => {
+    return () => {
+      formik.setFieldValue("password", "");
+      formik.setFieldValue("confirmPassword", "");
+      setIsRegistering(false);
+    };
+  }, []);
   return (
     <div className="flex flex-col items-center gap-4">
       <div className="mt-2 text-center font-bold tracking-tight">

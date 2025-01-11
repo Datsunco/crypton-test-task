@@ -42,8 +42,10 @@ const AuthPopover: React.FC = () => {
     (token: string) => setToken(token),
     () => setLoginOpened(false),
   );
-  const registerFormik = useRegisterFormik(setIsLoading, () =>
-    setRegOpened(false),
+  const registerFormik = useRegisterFormik(
+    setIsLoading,
+    (token: string) => setToken(token),
+    () => setRegOpened(false),
   );
 
   useEffect(() => {

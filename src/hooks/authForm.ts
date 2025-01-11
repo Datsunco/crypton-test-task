@@ -39,6 +39,7 @@ export const useLoginFormik = (
 
 export const useRegisterFormik = (
   setIsLoading: (loading: boolean) => void,
+  setToken: (token: string) => void,
   handleCloseDialogs: () => void,
 ) => {
   const [register] = useRegisterMutation();
@@ -63,6 +64,8 @@ export const useRegisterFormik = (
         setIsLoading(true);
         const response = await register(values).unwrap();
         localStorage.setItem("token", response.token);
+        setToken(response.token);
+
         handleCloseDialogs();
       } catch (error) {
         handleError(error, setErrors);
