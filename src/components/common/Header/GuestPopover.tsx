@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import AuthForm from "./AuthForm";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import RegForm from "./RegForm";
 
 interface GuestPopoverProps {
   loginOpened: boolean;
@@ -43,7 +44,6 @@ const GuestPopover: React.FC<GuestPopoverProps> = ({
         </DialogTrigger>
         <DialogContent className="rounded-3xl">
           <AuthForm
-            title="ВОЙДИТЕ В СВОЙ АККАУНТ ENVV"
             formik={loginFormik}
             isLoading={isLoading}
             onRegClick={() => {
@@ -60,8 +60,7 @@ const GuestPopover: React.FC<GuestPopoverProps> = ({
           </Button>
         </DialogTrigger>
         <DialogContent className="rounded-3xl">
-          <AuthForm
-            title="СОЗДАЙТЕ СВОЙ АККАУНТ ENVV"
+          <RegForm
             formik={registerFormik}
             isLoading={isLoading}
             onLoginClick={() => {
