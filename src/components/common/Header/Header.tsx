@@ -1,27 +1,23 @@
-//react, next
+// react, next
 import React from "react";
 
-//components
+// components
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-//icons
-import { LocateIcon } from "@/icons/LocateIcon";
+// icons
 import { MenuIcon } from "@/icons/MenuIcon";
 import { SearchIcon } from "@/icons/SearchIcon";
 
-//styles
-
+// styles
 import styles from "./Header.module.scss";
 import { HeartIcon } from "@/icons/HeartIcon";
 import { PackageIcon } from "@/icons/PackageIcon";
 import { CartIcon } from "@/icons/CartIcon";
 import { NavigationMenuDemo } from "../MenuBar/MenuBar";
-import { LogInIcon } from "lucide-react";
-import { LogoIcon } from "@/icons/Logoicon";
 import { SmalLogoIcon } from "@/icons/SmalLogoIcon";
+import AuthPopover from "./AuthPopover";
 
 export default function Header() {
   return (
@@ -70,44 +66,11 @@ export default function Header() {
                 <span className="">Корзина</span>
               </Link>
               <div className={styles.profileBlock}>
-                <Avatar className="w-12 h-12 border-solid border-2">
-                  <AvatarImage src="/placeholder-user.jpg" />
-                  <AvatarFallback>U</AvatarFallback>
-                </Avatar>
+                <AuthPopover />
               </div>
             </div>
           </div>
         </div>
-        {/* <nav className="flex items-center p-4">
-          <div className="flex items-center space-x-4">
-            <Link
-              href="#"
-              className="flex items-center space-x-1"
-              prefetch={false}
-            >
-              <LocateIcon className="w-4 h-4" />
-              <span>Москва</span>
-            </Link>
-            <Link href="#" className="text-gray-700" prefetch={false}>
-              Популярное 🔥
-            </Link>
-            <Link href="#" className="text-gray-700" prefetch={false}>
-              Резисторы
-            </Link>
-            <Link href="#" className="text-gray-700" prefetch={false}>
-              Конденсаторы
-            </Link>
-            <Link href="#" className="text-gray-700" prefetch={false}>
-              Индукторы
-            </Link>
-            <Link href="#" className="text-gray-700" prefetch={false}>
-              Процессоры
-            </Link>
-            <Link href="#" className="text-gray-700" prefetch={false}>
-              Преобразователи
-            </Link>
-          </div>
-        </nav> */}
         <NavigationMenuDemo />
       </div>
     </header>

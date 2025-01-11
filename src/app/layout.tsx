@@ -1,4 +1,6 @@
 //react, next
+
+import { Provider } from "react-redux";
 import React from "react";
 import Head from "next/head";
 import { Metadata } from "next";
@@ -9,6 +11,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/common/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import store from "@/store/store";
+import ClientProvider from "./ClientProvider";
 
 const fontSans = Jost({
   subsets: ["latin"],
@@ -33,9 +37,11 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Header />
-        <div className="flex flex-column justify-center">{children}</div>
-        <Footer />
+        <ClientProvider>
+          <Header />
+          <div className="flex flex-column justify-center">{children}</div>
+          <Footer />
+        </ClientProvider>
       </body>
     </html>
   );
